@@ -133,24 +133,6 @@
   }
   .icon.filled{ fill: currentColor; stroke: none; }
 
-  .portrait{
-    flex-shrink: 0;
-    width: 88px;
-    height: 88px;
-    border-radius: 50%;
-    background: linear-gradient(155deg, #EFD7E7 0%, #D8C5D8 30%, #C5D7D9 100%);
-    border: 1px solid rgba(116, 91, 112, 0.18);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35);
-  }
-  .portrait svg{
-    width: 52px;
-    height: 52px;
-    display: block;
-  }
 
   /* ---------- Section shell ---------- */
   section{ padding: 8px 0 56px; }
@@ -418,26 +400,8 @@
 <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light or dark theme">Toggle theme</button>
 
 <div class="wrap">
-  <div class="mark">Portfolio — draft</div>
-
   <header class="hero">
     <div class="hero-top">
-      <div class="portrait" aria-hidden="true">
-        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="32" cy="32" r="28" fill="rgba(255,255,255,0.18)"/>
-          <path d="M22 22L16 13L27 19Z" fill="#F8F0F5"/>
-          <path d="M42 22L48 13L37 19Z" fill="#F8F0F5"/>
-          <circle cx="24" cy="28" r="3.2" fill="#F8F0F5"/>
-          <circle cx="40" cy="28" r="3.2" fill="#F8F0F5"/>
-          <circle cx="24" cy="27.5" r="1.1" fill="#4B3C43"/>
-          <circle cx="40" cy="27.5" r="1.1" fill="#4B3C43"/>
-          <ellipse cx="32" cy="35.5" rx="10" ry="8" fill="#F8F0F5"/>
-          <path d="M25 39c2.5 3.2 11.5 3.2 14 0" stroke="#4B3C43" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-          <circle cx="18" cy="40" r="2.8" fill="#F7C8D1" opacity="0.9"/>
-          <circle cx="46" cy="40" r="2.8" fill="#F7C8D1" opacity="0.9"/>
-          <path d="M32 10c-2.6 0-4.8 2.2-4.8 4.8v2.8c0 2.6 2.2 4.8 4.8 4.8s4.8-2.2 4.8-4.8v-2.8C36.8 12.2 34.6 10 32 10Z" fill="#F8F0F5" opacity="0.9"/>
-        </svg>
-      </div>
       <h1>Patrycja Zawisza</h1>
     </div>
     <p class="role">I'm a <strong>product manager on the Wellness Platform team</strong>, currently leading the development of a new tab within the H&amp;B app — bringing personalized wellness journeys, tracking, and content together in one place for our members.</p>
