@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maren Cole — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #F7F7F5;
+    --paper-deep: #EDEDE9;
+    --ink: #1F2328;
+    --ink-soft: #565D66;
+    --pine: #5A7A96;
+    --pine-deep: #3A5872;
+    --mustard: #8A94A3;
+    --clay: #8A94A3;
+    --line: rgba(31,35,40,0.12);
+    --focus: #3A5872;
+    font-size: 17px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper: #1B1E22;
+      --paper-deep: #23272C;
+      --ink: #EDEDE9;
+      --ink-soft: #A7AEB6;
+      --pine: #8FADC6;
+      --pine-deep: #B4CBDD;
+      --mustard: #9AA3AF;
+      --clay: #9AA3AF;
+      --line: rgba(237,237,233,0.14);
+      --focus: #B4CBDD;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper: #1B1E22;
+    --paper-deep: #23272C;
+    --ink: #EDEDE9;
+    --ink-soft: #A7AEB6;
+    --pine: #8FADC6;
+    --pine-deep: #B4CBDD;
+    --mustard: #9AA3AF;
+    --clay: #9AA3AF;
+    --line: rgba(237,237,233,0.14);
+    --focus: #B4CBDD;
+  }
+
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; }
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Work Sans", -apple-system, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  a{ color: inherit; }
+  :focus-visible{ outline: 2px solid var(--focus); outline-offset: 3px; }
+
+  .wrap{
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Top mark ---------- */
+  .mark{
+    padding: 28px 0 0;
+    font-family: "Fraunces", serif;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 40px 0 64px;
+  }
+  .hero-top{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .hero h1{
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    line-height: 1.05;
+    margin: 0;
+    color: var(--ink);
+  }
+  .hero .role{
+    font-size: 1.08rem;
+    color: var(--ink-soft);
+    max-width: 58ch;
+    margin: 0 0 22px;
+  }
+  .hero .role strong{ color: var(--pine-deep); font-weight: 600; }
+
+  .contact-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-size: 0.95rem;
+  }
+  .contact-row a{
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .contact-row a:hover{ border-color: var(--pine-deep); color: var(--pine-deep); }
+  .icon{
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .icon.filled{ fill: currentColor; stroke: none; }
+
+  .portrait{
+    flex-shrink: 0;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: linear-gradient(155deg, var(--pine) 0%, var(--pine-deep) 100%);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Fraunces", serif;
+    color: var(--paper);
+    font-size: 1.7rem;
+    font-weight: 500;
+  }
+
+  /* ---------- Section shell ---------- */
+  section{ padding: 8px 0 56px; }
+  .section-head{
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 12px;
+  }
+  .section-head h2{
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-head h2 .icon{
+    width: 19px;
+    height: 19px;
+    color: var(--pine-deep);
+  }
+  .section-head .count{
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Highlights ---------- */
+  .highlights{
+    list-style: none;
+    margin: 0; padding: 0;
+    display: grid;
+    gap: 0;
+  }
+  .highlights li{
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .highlights li:last-child{ border-bottom: none; }
+  .highlights .when{
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    color: var(--pine-deep);
+    font-size: 0.95rem;
+    padding-top: 2px;
+  }
+  .highlights .what strong{ display:block; margin-bottom: 3px; }
+  .highlights .what span{ color: var(--ink-soft); font-size: 0.95rem; }
+
+  /* ---------- Projects ---------- */
+  .grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 620px){
+    .grid{ grid-template-columns: 1fr; }
+  }
+
+  .card{
+    border: 1px solid var(--line);
+    background: var(--paper-deep);
+    padding: 18px 18px 16px;
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    display: block;
+    width: 100%;
+  }
+  .card .tag{
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.74rem;
+    color: var(--pine-deep);
+    border: 1px solid var(--pine-deep);
+    padding: 3px 9px 3px 7px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+  }
+  .card .tag .icon{
+    width: 12px;
+    height: 12px;
+  }
+  .card h3{
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-size: 1.18rem;
+    margin: 0 0 8px;
+  }
+  .card p.blurb{
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+  .card .toggle-hint{
+    margin-top: 12px;
+    font-size: 0.82rem;
+    color: var(--pine-deep);
+  }
+  .card[aria-expanded="true"]{
+    background: var(--paper);
+    border-color: var(--pine-deep);
+  }
+
+  .card-detail{
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .28s ease;
+  }
+  .card-detail-inner{
+    padding-top: 14px;
+    margin-top: 14px;
+    border-top: 1px dashed var(--line);
+    font-size: 0.93rem;
+    color: var(--ink-soft);
+  }
+  .card-detail-inner ul{ margin: 8px 0 0; padding-left: 18px; }
+  .card-detail-inner li{ margin-bottom: 4px; }
+
+  /* ---------- Footer / contact ---------- */
+  footer{
+    padding: 12px 0 60px;
+    border-top: 1px solid var(--line);
+    margin-top: 4px;
+  }
+  footer h2{
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    margin: 34px 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  footer h2 .icon{ color: var(--pine-deep); }
+  footer p{ color: var(--ink-soft); max-width: 50ch; }
+  .send-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    background: var(--pine-deep);
+    color: var(--paper);
+    text-decoration: none;
+    padding: 11px 20px;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .send-btn:hover{ background: var(--pine); }
+
+  .theme-toggle{
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    background: var(--paper-deep);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font-size: 0.8rem;
+    padding: 7px 12px;
+    cursor: pointer;
+    font-family: "Work Sans", sans-serif;
+  }
+
+  /* ---------- Lock screen ---------- */
+  #siteContent.is-locked{
+    display: none;
+  }
+  .lock-screen{
+    position: fixed;
+    inset: 0;
+    background: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 100;
+  }
+  .lock-screen[hidden]{ display: none; }
+  .lock-box{
+    width: 100%;
+    max-width: 340px;
+    text-align: left;
+  }
+  .lock-box .icon-lock{
+    width: 30px;
+    height: 30px;
+    color: var(--pine-deep);
+    margin-bottom: 18px;
+  }
+  .lock-box h1{
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin: 0 0 8px;
+  }
+  .lock-box p{
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin: 0 0 22px;
+  }
+  .lock-form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .lock-form input{
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 11px 13px;
+    border: 1px solid var(--line);
+    background: var(--paper-deep);
+    color: var(--ink);
+    border-radius: 2px;
+  }
+  .lock-form input:focus-visible{
+    outline: 2px solid var(--focus);
+    outline-offset: 1px;
+  }
+  .lock-form button{
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 11px 16px;
+    background: var(--pine-deep);
+    color: var(--paper);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .lock-form button:hover{ background: var(--pine); }
+  .lock-error{
+    color: var(--clay);
+    font-size: 0.88rem;
+    min-height: 1.2em;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="lock-screen" id="lockScreen">
+  <div class="lock-box">
+    <svg class="icon-lock" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="10" height="7" rx="1"/><path d="M5 7V4.5a3 3 0 0 1 6 0V7"/></svg>
+    <h1>This page is private</h1>
+    <p>Enter the password to view Maren's portfolio.</p>
+    <form class="lock-form" id="lockForm">
+      <input type="password" id="lockInput" placeholder="Password" autocomplete="off" autofocus>
+      <button type="submit">Enter</button>
+      <p class="lock-error" id="lockError" role="alert"></p>
+    </form>
+  </div>
+</div>
+
+<div id="siteContent" class="is-locked">
+
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light or dark theme">Toggle theme</button>
+
+<div class="wrap">
+  <div class="mark">Portfolio — draft</div>
+
+  <header class="hero">
+    <div class="hero-top">
+      <div class="portrait" aria-hidden="true">MC</div>
+      <h1>Maren Cole</h1>
+    </div>
+    <p class="role">I'm a <strong>product designer &amp; frontend developer</strong>, working across research, interface design, and front-end implementation to ship products end to end.</p>
+    <div class="contact-row">
+      <a href="#projects"><svg class="icon" viewBox="0 0 16 16"><path d="M8 2v10M4 8l4 4 4-4"/></svg>See the work</a>
+      <a href="mailto:hello@example.com"><svg class="icon" viewBox="0 0 16 16"><rect x="1.5" y="3.5" width="13" height="9" rx="1"/><path d="M2 4.5l6 4.5 6-4.5"/></svg>hello@example.com</a>
+      <a href="#" onclick="return false"><svg class="icon" viewBox="0 0 16 16"><circle cx="8" cy="5" r="3"/><path d="M2.5 14c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/></svg>LinkedIn</a>
+      <a href="#" onclick="return false"><svg class="icon" viewBox="0 0 16 16"><path d="M4 1h6l3 3v11H4z"/><path d="M10 1v3h3"/><path d="M6 8.5h4M6 11h4"/></svg>Resume (PDF)</a>
+    </div>
+  </header>
+
+  <section id="projects">
+    <div class="section-head">
+      <h2><svg class="icon" viewBox="0 0 16 16"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>Projects</h2>
+      <span class="count">select a card for details</span>
+    </div>
+    <div class="grid" id="projectGrid"></div>
+  </section>
+
+  <section id="highlights">
+    <div class="section-head">
+      <h2><svg class="icon filled" viewBox="0 0 16 16"><path d="M8 1l1.8 4.6 4.9.3-3.8 3.2 1.3 4.8L8 11.6 3.8 13.9l1.3-4.8L1.3 5.9l4.9-.3z"/></svg>Highlights</h2>
+      <span class="count">6 years, three teams</span>
+    </div>
+    <ul class="highlights">
+      <li>
+        <span class="when">2024</span>
+        <span class="what"><strong>Led design for a checkout rebuild</strong><span>Cut cart abandonment by 18% across web and mobile at a mid-size retailer.</span></span>
+      </li>
+      <li>
+        <span class="when">2022–24</span>
+        <span class="what"><strong>Design systems lead</strong><span>Built and shipped a component library adopted by 5 product teams.</span></span>
+      </li>
+      <li>
+        <span class="when">2021</span>
+        <span class="what"><strong>Shipped a side project to 40k users</strong><span>A habit tracker that hit the front page of a niche community — still runs today.</span></span>
+      </li>
+      <li>
+        <span class="when">2019</span>
+        <span class="what"><strong>First design hire at a 12-person startup</strong><span>Set up research, prototyping, and handoff practice from scratch.</span></span>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <h2><svg class="icon" viewBox="0 0 16 16"><path d="M1.5 3.5h13v8h-9l-4 3v-3h0z"/></svg>Let's talk</h2>
+    <p>Open to product design and frontend roles. Happy to share more detail on any project above.</p>
+    <a class="send-btn" href="mailto:hello@example.com"><svg class="icon" viewBox="0 0 16 16" style="color:var(--paper)"><rect x="1.5" y="3.5" width="13" height="9" rx="1"/><path d="M2 4.5l6 4.5 6-4.5"/></svg>Say hello</a>
+  </footer>
+</div>
+
+</div><!-- /#siteContent -->
+
+<script>
+  // ---- Password gate ----
+  // NOTE: this only hides the page from casual visitors. The password
+  // and full page markup are both in this file's source, so anyone who
+  // views source can read them — this is not real security. Fine for
+  // keeping a work-in-progress link off search engines and out of the
+  // hands of people you haven't shared it with; not fine for anything
+  // truly sensitive. A real password wall needs a server to check the
+  // password before ever sending the page content.
+  (function(){
+    var PASSWORD = "productpat"; // change this to whatever you like
+
+    var lockScreen = document.getElementById('lockScreen');
+    var siteContent = document.getElementById('siteContent');
+    var form = document.getElementById('lockForm');
+    var input = document.getElementById('lockInput');
+    var error = document.getElementById('lockError');
+
+    function unlock(){
+      lockScreen.setAttribute('hidden', '');
+      siteContent.classList.remove('is-locked');
+      try{ sessionStorage.setItem('portfolio-unlocked', '1'); }catch(e){}
+    }
+
+    var alreadyUnlocked = false;
+    try{ alreadyUnlocked = sessionStorage.getItem('portfolio-unlocked') === '1'; }catch(e){}
+    if(alreadyUnlocked){ unlock(); }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(input.value === PASSWORD){
+        error.textContent = '';
+        unlock();
+      } else {
+        error.textContent = 'That password isn\'t right — try again.';
+        input.value = '';
+        input.focus();
+      }
+    });
+  })();
+
+  // ---- Theme toggle ----
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    var root = document.documentElement;
+    btn.addEventListener('click', function(){
+      var current = root.getAttribute('data-theme');
+      if(current === 'dark'){ root.setAttribute('data-theme','light'); }
+      else if(current === 'light'){ root.removeAttribute('data-theme'); }
+      else { root.setAttribute('data-theme','dark'); }
+    });
+  })();
+
+  // ---- Project data ----
+  var projects = [
+    {
+      tag: "Product",
+      title: "Checkout rebuild",
+      blurb: "Redesigned a five-step checkout down to two, for a retailer processing ~2M orders a year.",
+      role: "Lead product designer",
+      details: [
+        "Ran 14 usability sessions to find where people dropped off",
+        "Cut form fields from 22 to 9 using saved-address logic",
+        "Result: 18% fewer abandoned carts within one quarter"
+      ]
+    },
+    {
+      tag: "Systems",
+      title: "Component library",
+      blurb: "A shared design system spanning 5 product teams, from tokens to documented React components.",
+      role: "Design systems lead",
+      details: [
+        "Defined color, spacing, and type tokens used across all products",
+        "Paired with engineering to ship a matching React library",
+        "Cut new-feature design time by roughly a third, by team estimate"
+      ]
+    },
+    {
+      tag: "Side project",
+      title: "Habit tracker app",
+      blurb: "A quiet, no-streaks-shaming habit tracker built solo on evenings and weekends.",
+      role: "Designer & sole developer",
+      details: [
+        "Built with a focus on not guilt-tripping people who miss a day",
+        "Reached 40k signups after a single community post",
+        "Still maintained today, in spare time"
+      ]
+    },
+    {
+      tag: "Research",
+      title: "Onboarding overhaul",
+      blurb: "Rebuilt first-time-user onboarding after research showed most churn happened in the first 10 minutes.",
+      role: "Product designer",
+      details: [
+        "Mapped every drop-off point in the first session",
+        "Replaced a 6-screen tour with contextual, in-place hints",
+        "Day-7 retention rose from 24% to 31%"
+      ]
+    }
+  ];
+
+  var tagIcons = {
+    "Product": '<svg class="icon" viewBox="0 0 16 16"><path d="M8 1l6 3.3v7.4L8 15 2 11.7V4.3z"/><path d="M2 4.3L8 7.6l6-3.3M8 7.6V15"/></svg>',
+    "Systems": '<svg class="icon" viewBox="0 0 16 16"><path d="M8 1l7 4-7 4-7-4z"/><path d="M1.5 9.5L8 13l6.5-3.5"/></svg>',
+    "Side project": '<svg class="icon" viewBox="0 0 16 16"><path d="M8 1c2.2 2 3.3 5 3 8.3l-3 2.7-3-2.7c-.3-3.3.8-6.3 3-8.3z"/><circle cx="8" cy="6.3" r="1.1"/><path d="M5.3 11l-1.8 2.7M10.7 11l1.8 2.7"/></svg>',
+    "Research": '<svg class="icon" viewBox="0 0 16 16"><circle cx="6.7" cy="6.7" r="4.5"/><path d="M13.3 13.3l-3.4-3.4"/></svg>'
+  };
+
+  var grid = document.getElementById('projectGrid');
+
+  projects.forEach(function(p, i){
+    var card = document.createElement('button');
+    card.className = 'card';
+    card.type = 'button';
+    card.setAttribute('aria-expanded', 'false');
+    card.setAttribute('aria-controls', 'detail-' + i);
+
+    var detailId = 'detail-' + i;
+
+    card.innerHTML =
+      '<span class="tag">' + (tagIcons[p.tag] || '') + p.tag + '</span>' +
+      '<h3>' + p.title + '</h3>' +
+      '<p class="blurb">' + p.blurb + '</p>' +
+      '<div class="toggle-hint" data-hint>Open details</div>' +
+      '<div class="card-detail" id="' + detailId + '">' +
+        '<div class="card-detail-inner">' +
+          '<strong>' + p.role + '</strong>' +
+          '<ul>' + p.details.map(function(d){ return '<li>' + d + '</li>'; }).join('') + '</ul>' +
+        '</div>' +
+      '</div>';
+
+    card.addEventListener('click', function(){
+      var isOpen = card.getAttribute('aria-expanded') === 'true';
+      var detail = card.querySelector('.card-detail');
+      var hint = card.querySelector('[data-hint]');
+      if(isOpen){
+        card.setAttribute('aria-expanded', 'false');
+        detail.style.maxHeight = 0;
+        hint.textContent = 'Open details';
+      } else {
+        card.setAttribute('aria-expanded', 'true');
+        detail.style.maxHeight = detail.scrollHeight + 'px';
+        hint.textContent = 'Close';
+      }
+    });
+
+    grid.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
